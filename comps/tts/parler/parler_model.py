@@ -20,8 +20,8 @@ class ParlerTTSModel:
         return None
     
 if __name__ == "__main__":
-    device = "hpu" if hthpu.is_available() else "cpu"
-
+    # device = "hpu" if hthpu.is_available() else "cpu"
+    device = "cpu"
     model = ParlerTTSForConditionalGeneration.from_pretrained("parler-tts/parler-tts-mini-v1").to(device) # Aug. released model
     tokenizer = AutoTokenizer.from_pretrained("parler-tts/parler-tts-mini-v1")
 
